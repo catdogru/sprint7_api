@@ -94,7 +94,7 @@ public class LoginCourierTest {
 
     @Test
     @Description("Try to login with non-existent username and check error message")
-    public void nonExistingUserLogin() {
+    public void loginAsNonExistingUser() {
         CourierCredentials credentials = new CourierCredentials("nonExistingUserName", "testPassword");
         courierClient.loginCourier(credentials)
                 .assertThat()

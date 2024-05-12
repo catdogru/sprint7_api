@@ -9,7 +9,7 @@ import static io.restassured.http.ContentType.JSON;
 import static ru.yandex.scooter.Constants.Courier.*;
 
 public class CourierClient extends RestAssuredClient {
-    @Step("create courier")
+    @Step
     public ValidatableResponse createCourier(CourierData courierData) {
         return createRequestSpecification()
                 .contentType(JSON)
@@ -19,7 +19,7 @@ public class CourierClient extends RestAssuredClient {
                 .then().log().all();
     }
 
-    @Step("login courier")
+    @Step
     public ValidatableResponse loginCourier(CourierCredentials credentials) {
         return createRequestSpecification()
                 .contentType(JSON)
@@ -29,7 +29,7 @@ public class CourierClient extends RestAssuredClient {
                 .then().log().all();
     }
 
-    @Step("delete courier")
+    @Step
     public ValidatableResponse deleteCourier(Integer id) {
         return createRequestSpecification()
                 .pathParam(ID_PARAM, id)
